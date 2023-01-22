@@ -21,7 +21,7 @@ export default function Hero() {
 
 const HeroStyled = styled.section`
   display: grid;
-  gap: 12px;
+  gap: 16px;
   padding: 12px;
 
   & a {
