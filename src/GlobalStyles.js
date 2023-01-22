@@ -67,12 +67,17 @@ export default createGlobalStyle`
 body {
     margin: 0;
     font-family: var(--font-secondary);
+    font-size: 1.5em;
     font-weight: 300;
-    font-size: 112.5%;
     line-height: 1.5;
+    background-color: var(--light-primary);
 }
 
 button, input {
     font-size: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
 }
 `;
