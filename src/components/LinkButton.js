@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export default function LinkButton({ href, children }) {
-  return <Link href={href}>{children}</Link>;
+export default function LinkButton({ href, children, ...rest }) {
+  return (
+    <Link {...rest} href={href}>
+      {children}
+    </Link>
+  );
 }
 
 const Link = styled.a`
