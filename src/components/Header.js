@@ -2,18 +2,38 @@ import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import BurgerMenu from "./BurgerMenu";
 
+const links = [
+  {
+    name: "About",
+    id: "#about",
+  },
+  {
+    name: "Experience",
+    id: "#experience",
+  },
+  {
+    name: "Projects",
+    id: "#projects",
+  },
+  {
+    name: "Contact",
+    id: "#contact",
+  },
+];
+
 export default function Header() {
   return (
     <HeaderStyled>
       <LogoStyled href="#hero">
         <img src={Logo} alt="MCK" />
       </LogoStyled>
-      <BurgerMenu />
+      <BurgerMenu links={links} />
       <Nav>
-        <Link href="#about">About</Link>
-        <Link href="#experience">Experience</Link>
-        <Link href="#projects">Projects</Link>
-        <Link href="#contact">Contact</Link>
+        {links.map(({ name, id }) => (
+          <Link key={id} href={id}>
+            {name}
+          </Link>
+        ))}
       </Nav>
     </HeaderStyled>
   );
@@ -43,7 +63,7 @@ const LogoStyled = styled.a`
 `;
 
 const Nav = styled.nav`
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     display: none;
   }
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-export default function BurgerMenu() {
+export default function BurgerMenu({ links }) {
   const ref = useRef();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,10 +25,11 @@ export default function BurgerMenu() {
         {isOpen ? "Close" : "Menu"}
       </BurgerMenuButton>
       <BurgerMenuStyled isOpen={isOpen}>
-        <Link href="#about">About</Link>
-        <Link href="#experience">Experience</Link>
-        <Link href="#projects">Projects</Link>
-        <Link href="#contact">Contact</Link>
+        {links.map(({ name, id }) => (
+          <Link key={id} href={id}>
+            {name}
+          </Link>
+        ))}
       </BurgerMenuStyled>
     </Section>
   );
