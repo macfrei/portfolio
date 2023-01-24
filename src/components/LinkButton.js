@@ -15,5 +15,5 @@ const Link = styled.a`
   border: 1px solid var(--primary-blue);
   border-radius: 8px;
   text-decoration: none;
-  color: var(--light-primary);
+  color: white;
 `;

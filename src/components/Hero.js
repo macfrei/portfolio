@@ -16,7 +16,7 @@ export default function Hero() {
         aria-label="Send me an email"
         href="mailto:mariecarleen.koizumi@gmail.com"
       >
-        Let's connect!
+        Send me an email!
       </LinkButton>
     </HeroStyled>
   );
@@ -24,8 +24,12 @@ export default function Hero() {
 
 const HeroStyled = styled.section`
   display: grid;
+  place-content: center;
   gap: 16px;
   padding: 12px;
+
+  min-height: 100vh;
+  height: 100vh;
 
   & a {
     justify-self: start;
