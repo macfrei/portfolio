@@ -62,6 +62,10 @@ export default createGlobalStyle`
 
     --font-primary: 'Leckerli One', cursive;
     --font-secondary: 'Roboto', sans-serif;
+
+    --primary-blue-shadow: -10px 0px 30px -15px var(--primary-blue);
+
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 body {
@@ -70,7 +74,6 @@ body {
     font-size: 1.5em;
     font-weight: 300;
     line-height: 1.5;
-    background-color: var(--light-primary);
 }
 
 button, input {
