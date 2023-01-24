@@ -30,4 +30,8 @@ const Main = styled.main`
   @media (max-width: 768px) {
     padding: 0 50px;
   }
+
+  @media (max-width: 390px) {
+    padding: 0 25px;
+  }
 `;

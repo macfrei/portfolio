@@ -34,6 +34,10 @@ const HeroStyled = styled.section`
   & a {
     justify-self: start;
   }
+
+  @media (max-width: 390px) {
+    font-size: 1rem;
+  }
 `;
 
 const Headline = styled.h1`
