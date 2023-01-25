@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import FocusLock from "react-focus-lock";
 
 export default function BurgerMenu({ links }) {
   const ref = useRef();
@@ -20,18 +21,36 @@ export default function BurgerMenu({ links }) {
   }, [isOpen]);
 
   return (
-    <Section ref={ref}>
-      <BurgerMenuButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Close" : "Menu"}
-      </BurgerMenuButton>
-      <BurgerMenuStyled isOpen={isOpen}>
-        {links.map(({ name, id }) => (
-          <Link key={id} href={id}>
-            {name}
-          </Link>
-        ))}
-      </BurgerMenuStyled>
-    </Section>
+    <>
+      {!isOpen ? (
+        <BurgerMenuButton
+          isOpen={isOpen}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Open menu"
+        >
+          Menu
+        </BurgerMenuButton>
+      ) : (
+        <FocusLock>
+          <Section ref={ref}>
+            <BurgerMenuButton
+              isOpen={isOpen}
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Close menu"
+            >
+              Close
+            </BurgerMenuButton>
+            <BurgerMenuStyled isOpen={isOpen}>
+              {links.map(({ name, id }) => (
+                <Link key={id} href={id} onClick={() => setIsOpen(!isOpen)}>
+                  {name}
+                </Link>
+              ))}
+            </BurgerMenuStyled>
+          </Section>
+        </FocusLock>
+      )}
+    </>
   );
 }
 
