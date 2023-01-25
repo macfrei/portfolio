@@ -12,10 +12,7 @@ export default function Hero() {
         the web. Currently, I focus to learn all about web accessibility and
         frontend testing.
       </p>
-      <LinkButton
-        aria-label="Send me an email"
-        href="mailto:mariecarleen.koizumi@gmail.com"
-      >
+      <LinkButton href="mailto:mariecarleen.koizumi@gmail.com">
         Send me an email!
       </LinkButton>
     </HeroStyled>

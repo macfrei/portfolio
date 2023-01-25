@@ -7,16 +7,16 @@ export default function BurgerMenu({ links }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const checkIfClickedOutside = (event) => {
+    const closeOnClickOutside = (event) => {
       if (isOpen && ref.current && !ref.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", checkIfClickedOutside);
+    document.addEventListener("mousedown", closeOnClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside);
+      document.removeEventListener("mousedown", closeOnClickOutside);
     };
   }, [isOpen]);
 
