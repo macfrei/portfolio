@@ -9,6 +9,7 @@ export default function LinkButton({ href, children, ...rest }) {
 }
 
 const Link = styled.a`
+  justify-self: start;
   padding: 12px;
   font-size: inherit;
   background-color: var(--primary-blue);
