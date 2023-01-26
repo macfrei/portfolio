@@ -5,19 +5,26 @@ const socialMedias = [
   {
     component: <GitHub />,
     link: "https://github.com/macfrei",
+    name: "My GitHub profile",
   },
   {
     component: <Linkedin />,
     link: "https://www.linkedin.com/in/marie-carleen-koizumi/",
+    name: "My LinkedIn profile",
   },
 ];
 
 export default function SocialMenu({ className, color }) {
   return (
     <IconList className={className}>
-      {socialMedias.map(({ component, link }) => (
+      {socialMedias.map(({ component, link, name }) => (
         <ListItem color={color}>
-          <a href={link} rel="noopener noreferrer" target="_blank">
+          <a
+            href={link}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label={name}
+          >
             {component}
           </a>
         </ListItem>
