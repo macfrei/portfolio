@@ -94,6 +94,10 @@ const BurgerMenuButton = styled.button`
   padding: 15px;
   position: relative;
   z-index: 20;
+
+  @media (min-width: 767px) {
+    display: none;
+  }
 `;
 
 const Link = styled.a`
