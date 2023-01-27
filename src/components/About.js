@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import LinkButton from "./LinkButton";
+import TechStackList from "./TechStackList";
 
 export default function About() {
   return (
     <AboutStyled id="about">
-      <h2>About me</h2>
+      <SubHeadline>About me</SubHeadline>
       <p>
-        Hi! Welcome to my portfolio / website. I created this space to introduce
-        myself and summarize some of the projects I have worked on. My web
-        development journey started four years ago when I signed up for an
-        intensive “R” course at university. It lasted only a week, but I felt
+        Hi! 👋 Welcome to my portfolio-slash-website. I created this space to
+        introduce myself and summarize some of the projects I have worked on.
+      </p>
+      <p>
+        My web development journey started four years ago when I signed up for
+        an intensive “R” course at university. It lasted only a week, but I felt
         excited and wanted to know more about programming. I started to play
         around with HTML and CSS on my own. Seemingly creating something new out
         of nowhere captured my curiosity and I decided to attend a Web
@@ -33,6 +36,7 @@ export default function About() {
         building up my portfolio. Currently, I am looking for a new challenge as
         a Frontend Developer.
       </p>
+      <TechStackList />
       <p>Please reach out - I would love to connect with you!</p>
       <LinkButton href="mailto:mariecarleen.koizumi@gmail.com">
         Send me an email!
@@ -46,11 +50,17 @@ const AboutStyled = styled.section`
   place-content: center;
   gap: 16px;
   padding: 12px;
-
-  height: 100vh;
+  min-height: 100vh;
+  scroll-margin-top: 100px;
 
   @media (max-width: 767px) {
-    scroll-margin-top: 100px;
     place-content: start;
+    margin-bottom: 80px;
   }
+`;
+
+const SubHeadline = styled.h2`
+  font-weight: 300;
+  color: var(--primary-blue);
+  font-family: var(--font-primary);
 `;
