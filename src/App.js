@@ -6,18 +6,23 @@ import SocialMenu from "./components/SocialMenu";
 
 function App() {
   return (
-    <>
+    <AppContainer>
       <Header />
       <Main>
         <Hero />
         <About />
       </Main>
       <SocialMenuStyled color="var(--primary-blue)" />
-    </>
+    </AppContainer>
   );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+`;
 
 const SocialMenuStyled = styled(SocialMenu)`
   @media (max-width: 767px) {
@@ -42,11 +47,7 @@ const Main = styled.main`
   display: grid;
   place-content: center;
 
-  @media (min-width: 1080px) {
-    padding: 0 150px;
-  }
-
-  @media (max-width: 1079px) {
+  @media (max-width: 900px) {
     padding: 0 100px;
   }
 
