@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import LinkButton from "./LinkButton";
+import SocialMenu from "./SocialMenu";
 
 export default function Hero() {
   return (
-    <HeroStyled>
+    <HeroStyled id="hero">
       <p>Hello, my name is</p>
       <Headline>Marie-Carleen Koizumi.</Headline>
       <SubHeadline>I am a passionate web developer.</SubHeadline>
@@ -12,9 +12,6 @@ export default function Hero() {
         the web. Currently, I focus to learn all about web accessibility and
         frontend testing.
       </p>
-      <LinkButton href="mailto:mariecarleen.koizumi@gmail.com">
-        Send me an email!
-      </LinkButton>
     </HeroStyled>
   );
 }
@@ -27,14 +24,6 @@ const HeroStyled = styled.section`
 
   min-height: 100vh;
   height: 100vh;
-
-  & a {
-    justify-self: start;
-  }
-
-  @media (max-width: 390px) {
-    font-size: 1rem;
-  }
 `;
 
 const Headline = styled.h1`

@@ -71,9 +71,13 @@ export default createGlobalStyle`
 body {
     margin: 0;
     font-family: var(--font-secondary);
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: 300;
     line-height: 1.5;
+
+    @media (max-width: 390px) {
+    font-size: 1rem;
+  }
 }
 
 button, input {

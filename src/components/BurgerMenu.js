@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import FocusLock from "react-focus-lock";
 
+import SocialMenu from "./SocialMenu";
+
 export default function BurgerMenu({ links }) {
   const ref = useRef();
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +48,7 @@ export default function BurgerMenu({ links }) {
                   {name}
                 </Link>
               ))}
+              <SocialMenu color="white" />
             </BurgerMenuStyled>
           </Section>
         </FocusLock>
@@ -55,7 +58,7 @@ export default function BurgerMenu({ links }) {
 }
 
 const Section = styled.section`
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -94,6 +97,10 @@ const BurgerMenuButton = styled.button`
   padding: 15px;
   position: relative;
   z-index: 20;
+
+  @media (min-width: 767px) {
+    display: none;
+  }
 `;
 
 const Link = styled.a`

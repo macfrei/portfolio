@@ -7,18 +7,6 @@ const links = [
     name: "About",
     id: "#about",
   },
-  {
-    name: "Experience",
-    id: "#experience",
-  },
-  {
-    name: "Projects",
-    id: "#projects",
-  },
-  {
-    name: "Contact",
-    id: "#contact",
-  },
 ];
 
 export default function Header() {
@@ -45,6 +33,7 @@ const HeaderStyled = styled.header`
   align-items: center;
   flex-wrap: wrap;
 
+  background-color: white;
   position: fixed;
   top: 0;
 
