@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import SocialMenu from "./SocialMenu";
 
 export default function Hero() {
   return (
@@ -18,7 +17,7 @@ export default function Hero() {
 
 const HeroStyled = styled.section`
   display: grid;
-  place-content: center;
+  align-content: center;
   gap: 16px;
   padding: 12px;
 

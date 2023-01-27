@@ -18,7 +18,7 @@ export default function SocialMenu({ className, color }) {
   return (
     <IconList className={className}>
       {socialMedias.map(({ component, link, name }) => (
-        <ListItem color={color}>
+        <ListItem key={name} color={color}>
           <a
             href={link}
             rel="noopener noreferrer"
