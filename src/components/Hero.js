@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import SocialMenu from "./SocialMenu";
 
 export default function Hero() {
   return (
