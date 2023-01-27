@@ -17,7 +17,7 @@ export default function Hero() {
 
 const HeroStyled = styled.section`
   display: grid;
-  place-content: center;
+  align-content: center;
   gap: 16px;
   padding: 12px;
 
