@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default function Hero() {
   return (
@@ -33,6 +33,5 @@ const Headline = styled.h1`
 `;
 
 const SubHeadline = styled.h2`
-  font-weight: 300;
   color: var(--secondary-silver);
 `;

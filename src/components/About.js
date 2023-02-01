@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import LinkButton from "./LinkButton";
-import TechStackList from "./TechStackList";
+import styled from 'styled-components';
+import LinkButton from './LinkButton';
+import TechStackList from './TechStackList';
 
 export default function About() {
   return (
@@ -8,7 +8,7 @@ export default function About() {
       <SubHeadline>About me</SubHeadline>
       <p>
         Hi! 👋 Welcome to my portfolio-slash-website. I created this space to
-        introduce myself and summarize some of the projects I have worked on.
+        introduce myself.
       </p>
       <p>
         My web development journey started four years ago when I signed up for
@@ -60,7 +60,6 @@ const AboutStyled = styled.section`
 `;
 
 const SubHeadline = styled.h2`
-  font-weight: 300;
   color: var(--primary-blue);
   font-family: var(--font-primary);
 `;
