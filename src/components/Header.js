@@ -1,11 +1,15 @@
-import styled from "styled-components";
-import Logo from "../assets/logo.png";
-import BurgerMenu from "./BurgerMenu";
+import styled from 'styled-components';
+import Logo from '../assets/logo.png';
+import BurgerMenu from './BurgerMenu';
 
 const links = [
   {
-    name: "About",
-    id: "#about",
+    name: 'About',
+    id: '#about',
+  },
+  {
+    name: 'Experience',
+    id: '#experience',
   },
 ];
 
@@ -38,6 +42,7 @@ const HeaderStyled = styled.header`
   top: 0;
   right: 0;
   left: 0;
+  z-index: 10;
 
   width: 100%;
   height: 80px;

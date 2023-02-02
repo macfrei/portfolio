@@ -1,8 +1,9 @@
-import styled from "styled-components";
-import About from "./components/About";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import SocialMenu from "./components/SocialMenu";
+import styled from 'styled-components';
+import About from './components/About';
+import Experience from './components/Experience';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import SocialMenu from './components/SocialMenu';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Main>
         <Hero />
         <About />
+        <Experience />
       </Main>
       <SocialMenuStyled color="var(--primary-blue)" />
     </AppContainer>
@@ -22,6 +24,7 @@ export default App;
 const AppContainer = styled.div`
   max-width: 900px;
   margin: 0 auto;
+  margin-bottom: 80px;
 `;
 
 const SocialMenuStyled = styled(SocialMenu)`
@@ -46,6 +49,7 @@ const SocialMenuStyled = styled(SocialMenu)`
 const Main = styled.main`
   display: grid;
   place-content: center;
+  gap: 50px;
 
   @media (max-width: 900px) {
     padding: 0 100px;
