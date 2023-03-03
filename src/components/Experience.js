@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Zap } from 'react-feather';
+import LinkButton from './LinkButton';
 
 const workExperience = [
   {
@@ -49,6 +50,13 @@ export default function Experience() {
           </ListItem>
         ))}
       </List>
+      <LinkButton
+        href="/marie-carleen_koizumi_CV.pdf"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Get the full CV
+      </LinkButton>
     </ExperienceStyled>
   );
 }
