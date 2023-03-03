@@ -59,6 +59,11 @@ const HeroStyled = styled.section`
 const ProfileImageStyled = styled(ProfileImage)`
   align-self: center;
   border-radius: 8px;
+
+  @media (max-width: 450px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const TextGroup = styled.div`
