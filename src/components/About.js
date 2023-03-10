@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import LinkButton from './LinkButton';
+import ProfileImage from './ProfileImage';
 import TechStackList from './TechStackList';
 
 export default function About() {
@@ -10,6 +11,7 @@ export default function About() {
         Hi! 👋 Welcome to my portfolio-slash-website. I created this space to
         introduce myself.
       </p>
+      <ProfileImageStyled />
       <p>
         My web development journey started four years ago when I signed up for
         an intensive “R” course at university. It lasted only a week, but I felt
@@ -62,4 +64,12 @@ const AboutStyled = styled.section`
 const SubHeadline = styled.h2`
   color: var(--primary-blue);
   font-family: var(--font-primary);
+`;
+
+const ProfileImageStyled = styled(ProfileImage)`
+  justify-self: center;
+
+  @media (min-width: 521px) {
+    display: none;
+  }
 `;

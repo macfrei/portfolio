@@ -10,4 +10,5 @@ const ImageStyled = styled.img`
   width: 250px;
   object-fit: cover;
   border: 1px solid var(--primary-blue);
+  border-radius: 8px;
 `;
