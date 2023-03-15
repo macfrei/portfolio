@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -6,6 +8,30 @@ import Hero from './components/Hero';
 import SocialMenu from './components/SocialMenu';
 
 function App() {
+  const [repos, setRepos] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/repos')
+      .then(response => response.json())
+      .then(repos => {
+        // const foo = repos.map(async repo => {
+        //   const response = await fetch('/api/commits', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ repoName: repo.name }),
+        //   });
+        //   const commits = await response.json();
+        //   console.log(commits.length);
+        //   return { ...repo, commitLength: commits.length };
+        // });
+        // console.log(foo);
+        setRepos(repos);
+      })
+      .catch(console.error);
+  }, []);
+
+  console.log(repos);
+
   return (
     <AppContainer>
       <Header />
