@@ -5,7 +5,11 @@ const octokit = new Octokit({
 });
 
 async function handler(request, response) {
-  const { repoName } = request.body;
+  const { repoName, size } = request.body;
+
+  if (size === 0) {
+    response.status(200).json({ repoName, commits: [] });
+  }
 
   const commits = await octokit.request(
     `GET /repos/macfrei/${repoName}/commits`,
@@ -16,9 +20,8 @@ async function handler(request, response) {
       per_page: 100,
     }
   );
-  console.log(repoName, commits.data.length);
 
-  response.status(200).json(commits.data);
+  response.status(200).json({ repoName, commits: commits.data });
 }
 
 export default handler;

@@ -14,18 +14,23 @@ function App() {
     fetch('/api/repos')
       .then(response => response.json())
       .then(repos => {
-        // const foo = repos.map(async repo => {
-        //   const response = await fetch('/api/commits', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ repoName: repo.name }),
-        //   });
-        //   const commits = await response.json();
-        //   console.log(commits.length);
-        //   return { ...repo, commitLength: commits.length };
-        // });
-        // console.log(foo);
-        setRepos(repos);
+        Promise.all(
+          repos.map(repo =>
+            fetch('/api/commits', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ repoName: repo.name, size: repo.size }),
+            }).then(res => res.json())
+          )
+        ).then(response => {
+          const reposWithCommits = repos.map(repo => {
+            const { commits } = response.find(
+              commits => commits.repoName === repo.name
+            );
+            return { ...repo, commits };
+          });
+          setRepos(reposWithCommits);
+        });
       })
       .catch(console.error);
   }, []);
