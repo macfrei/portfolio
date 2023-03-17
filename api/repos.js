@@ -19,6 +19,7 @@ async function handler(request, response) {
     description: repo.description,
     lastUpdated: repo['updated_at'],
     visibility: repo.visibility,
+    size: repo.size,
   }));
 
   response.status(200).json(repoData);
