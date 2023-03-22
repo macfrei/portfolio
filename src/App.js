@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -6,6 +8,35 @@ import Hero from './components/Hero';
 import SocialMenu from './components/SocialMenu';
 
 function App() {
+  const [repos, setRepos] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/repos')
+      .then(response => response.json())
+      .then(repos => {
+        Promise.all(
+          repos.map(repo =>
+            fetch('/api/commits', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ repoName: repo.name, size: repo.size }),
+            }).then(res => res.json())
+          )
+        ).then(response => {
+          const reposWithCommits = repos.map(repo => {
+            const { commits } = response.find(
+              commits => commits.repoName === repo.name
+            );
+            return { ...repo, commits };
+          });
+          setRepos(reposWithCommits);
+        });
+      })
+      .catch(console.error);
+  }, []);
+
+  console.log(repos);
+
   return (
     <AppContainer>
       <Header />
