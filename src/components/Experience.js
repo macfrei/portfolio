@@ -38,7 +38,7 @@ export default function Experience() {
               <Zap width="24" height="24" color="var(--primary-blue)" />
               {name}
             </SubHeadline>
-            <Foo>
+            <ExperienceDetails>
               <span>{company}</span>
               <span>{period}</span>
               <Responsibilities>
@@ -46,7 +46,7 @@ export default function Experience() {
                   <li key={responsibility}>{responsibility}</li>
                 ))}
               </Responsibilities>
-            </Foo>
+            </ExperienceDetails>
           </ListItem>
         ))}
       </List>
@@ -74,7 +74,7 @@ const ExperienceStyled = styled.section`
     margin-bottom: 80px;
   }
 `;
-const Foo = styled.div`
+const ExperienceDetails = styled.div`
   display: grid;
   gap: 12px;
   border-left: 1px solid var(--primary-blue);
