@@ -11,6 +11,10 @@ const links = [
     name: 'Experience',
     id: '#experience',
   },
+  {
+    name: 'Projects',
+    id: '#projects',
+  },
 ];
 
 export default function Header() {

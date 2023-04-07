@@ -33,6 +33,10 @@ export default function Hero() {
           </Link>
           !
         </p>
+        <p>
+          And do check out my most recent <Link href="#projects">projects</Link>
+          !
+        </p>
       </TextGroup>
       <ProfileImageStyled />
     </HeroStyled>
