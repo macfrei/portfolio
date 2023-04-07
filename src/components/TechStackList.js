@@ -1,16 +1,17 @@
-import styled from "styled-components";
-import { Zap } from "react-feather";
+import styled from 'styled-components';
+import { Zap } from 'react-feather';
 
 const techStack = [
-  "JavaScript (ES6+)",
-  "React",
-  "CSS",
-  "HTML",
-  "Git",
-  "GitHub",
-  "VSCode",
-  "NodeJS",
-  "Jest",
+  'JavaScript (ES6+)',
+  'TypeScript (basics)',
+  'React',
+  'CSS',
+  'HTML',
+  'Git',
+  'GitHub',
+  'VSCode',
+  'NodeJS',
+  'Jest',
 ];
 
 export default function TechStackList() {
@@ -18,7 +19,7 @@ export default function TechStackList() {
     <Section>
       <SubHeadline>Technologies I love to use</SubHeadline>
       <TechStack role="list">
-        {techStack.map((technology) => (
+        {techStack.map(technology => (
           <ListItem key={technology}>
             <Zap width="20" height="20" color="var(--primary-blue)" />
             {technology}
