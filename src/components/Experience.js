@@ -5,6 +5,16 @@ import LinkButton from './LinkButton';
 
 const workExperience = [
   {
+    name: 'Frontend Developer',
+    company: 'SIVA Inc.',
+    period: 'August 2023 - Present',
+    responsibilities: [
+      'Build and maintain Frontend using React and TypeScript',
+      'Introducing testing strategy to new products',
+      'Learning and working with NextJS and GraphQL',
+    ],
+  },
+  {
     name: 'Frontend Developer & Web Development Coach',
     company: 'neuefische GmbH',
     period: 'June 2020 - September 2022',
